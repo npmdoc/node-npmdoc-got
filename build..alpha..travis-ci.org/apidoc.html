@@ -1,0 +1,1347 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/sindresorhus/got#readme"
+
+    >got (v6.7.1)</a>
+</h1>
+<h4>Simplified HTTP requests</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got">module got</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError">
+            function <span class="apidocSignatureSpan">got.</span>HTTPError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError.super_">
+            function <span class="apidocSignatureSpan">got.</span>HTTPError.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.MaxRedirectsError">
+            function <span class="apidocSignatureSpan">got.</span>MaxRedirectsError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ParseError">
+            function <span class="apidocSignatureSpan">got.</span>ParseError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ReadError">
+            function <span class="apidocSignatureSpan">got.</span>ReadError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.RequestError">
+            function <span class="apidocSignatureSpan">got.</span>RequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.delete">
+            function <span class="apidocSignatureSpan">got.</span>delete
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.get">
+            function <span class="apidocSignatureSpan">got.</span>get
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.head">
+            function <span class="apidocSignatureSpan">got.</span>head
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.patch">
+            function <span class="apidocSignatureSpan">got.</span>patch
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.post">
+            function <span class="apidocSignatureSpan">got.</span>post
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.put">
+            function <span class="apidocSignatureSpan">got.</span>put
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream">
+            function <span class="apidocSignatureSpan">got.</span>stream
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.HTTPError">module got.HTTPError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError.HTTPError">
+            function <span class="apidocSignatureSpan">got.</span>HTTPError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError.super_">
+            function <span class="apidocSignatureSpan">got.HTTPError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.HTTPError.super_">module got.HTTPError.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError.super_.super_">
+            function <span class="apidocSignatureSpan">got.HTTPError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError.super_.captureStackTrace">
+            function <span class="apidocSignatureSpan">got.HTTPError.super_.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">got.HTTPError.super_.</span>stackTraceLimit</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.MaxRedirectsError">module got.MaxRedirectsError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.MaxRedirectsError.MaxRedirectsError">
+            function <span class="apidocSignatureSpan">got.</span>MaxRedirectsError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.MaxRedirectsError.super_">
+            function <span class="apidocSignatureSpan">got.MaxRedirectsError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.ParseError">module got.ParseError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ParseError.ParseError">
+            function <span class="apidocSignatureSpan">got.</span>ParseError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ParseError.super_">
+            function <span class="apidocSignatureSpan">got.ParseError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.ReadError">module got.ReadError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ReadError.ReadError">
+            function <span class="apidocSignatureSpan">got.</span>ReadError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.ReadError.super_">
+            function <span class="apidocSignatureSpan">got.ReadError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.RequestError">module got.RequestError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.RequestError.RequestError">
+            function <span class="apidocSignatureSpan">got.</span>RequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.RequestError.super_">
+            function <span class="apidocSignatureSpan">got.RequestError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.got.stream">module got.stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.stream">
+            function <span class="apidocSignatureSpan">got.</span>stream
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.delete">
+            function <span class="apidocSignatureSpan">got.stream.</span>delete
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.get">
+            function <span class="apidocSignatureSpan">got.stream.</span>get
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.head">
+            function <span class="apidocSignatureSpan">got.stream.</span>head
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.patch">
+            function <span class="apidocSignatureSpan">got.stream.</span>patch
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.post">
+            function <span class="apidocSignatureSpan">got.stream.</span>post
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.got.stream.put">
+            function <span class="apidocSignatureSpan">got.stream.</span>put
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got" id="apidoc.module.got">module got</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError" id="apidoc.element.got.HTTPError">
+        function <span class="apidocSignatureSpan">got.</span>HTTPError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HTTPError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+							res.body = JSON.parse(res.body);
+						} catch (e) {
+							throw new got.ParseError(e, statusCode, opts, data);
+						}
+					}
+
+					if (statusCode &#x3c; 200 || statusCode &#x3e; limitStatusCode) {
+						throw new got.<span class="apidocCodeKeywordSpan">HTTPError</span>(statusCode, opts);
+					}
+
+					resolve(res);
+				})
+				.catch(err =&#x3e; {
+					Object.defineProperty(err, &#x27;response&#x27;, {value: res});
+					reject(err);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError.super_" id="apidoc.element.got.HTTPError.super_">
+        function <span class="apidocSignatureSpan">got.</span>HTTPError.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.MaxRedirectsError" id="apidoc.element.got.MaxRedirectsError">
+        function <span class="apidocSignatureSpan">got.</span>MaxRedirectsError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MaxRedirectsError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		const req = fn.request(opts, res =&#x3e; {
+			const statusCode = res.statusCode;
+
+			if (isRedirect(statusCode) &#x26;&#x26; opts.followRedirect &#x26;&#x26; &#x27;location&#x27; in res.headers &#x26;&#x26; (opts
+.method === &#x27;GET&#x27; || opts.method === &#x27;HEAD&#x27;)) {
+				res.resume();
+
+				if (++redirectCount &#x3e; 10) {
+					ee.emit(&#x27;error&#x27;, new got.<span class="apidocCodeKeywordSpan">MaxRedirectsError</span>(statusCode, opts), null, res
+);
+					return;
+				}
+
+				const bufferString = Buffer.from(res.headers.location, &#x27;binary&#x27;).toString();
+
+				redirectUrl = urlLib.resolve(urlLib.format(opts), bufferString);
+				const redirectOpts = Object.assign({}, opts, urlLib.parse(redirectUrl));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.ParseError" id="apidoc.element.got.ParseError">
+        function <span class="apidocSignatureSpan">got.</span>ParseError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ParseError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+					res.body = data;
+
+					if (opts.json &#x26;&#x26; res.body) {
+						try {
+							res.body = JSON.parse(res.body);
+						} catch (e) {
+							throw new got.<span class="apidocCodeKeywordSpan">ParseError</span>(e, statusCode, opts, data);
+						}
+					}
+
+					if (statusCode &#x3c; 200 || statusCode &#x3e; limitStatusCode) {
+						throw new got.HTTPError(statusCode, opts);
+					}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.ReadError" id="apidoc.element.got.ReadError">
+        function <span class="apidocSignatureSpan">got.</span>ReadError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ReadError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			req.end(opts.body);
+		});
+
+		ee.on(&#x27;response&#x27;, res =&#x3e; {
+			const stream = opts.encoding === null ? getStream.buffer(res) : getStream(res, opts);
+
+			stream
+				.catch(err =&#x3e; reject(new got.<span class="apidocCodeKeywordSpan">ReadError</span>(err, opts)))
+				.then(data =&#x3e; {
+					const statusCode = res.statusCode;
+					const limitStatusCode = opts.followRedirect ? 299 : 399;
+
+					res.body = data;
+
+					if (opts.json &#x26;&#x26; res.body) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.RequestError" id="apidoc.element.got.RequestError">
+        function <span class="apidocSignatureSpan">got.</span>RequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RequestError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			const backoff = opts.retries(++retryCount, err);
+
+			if (backoff) {
+				setTimeout(get, backoff, opts);
+				return;
+			}
+
+			ee.emit(&#x27;error&#x27;, new got.<span class="apidocCodeKeywordSpan">RequestError</span>(err, opts));
+		});
+
+		if (opts.gotTimeout) {
+			timedOut(req, opts.gotTimeout);
+		}
+
+		setImmediate(() =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.delete" id="apidoc.element.got.delete">
+        function <span class="apidocSignatureSpan">got.</span>delete
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">delete</span>(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+
+Each error contains (if available) `statusCode`, `statusMessage`, `host`, `hostname`, `method` and `path` properties to make debugging
+ easier.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.get" id="apidoc.element.got.get">
+        function <span class="apidocSignatureSpan">got.</span>get
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`redirect` event to get the response object of a redirect. The second argument is options for the next request to the redirect location
+.
+
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.<span class="apidocCodeKeywordSpan">get</span>(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.head" id="apidoc.element.got.head">
+        function <span class="apidocSignatureSpan">got.</span>head
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">head</span>(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.patch" id="apidoc.element.got.patch">
+        function <span class="apidocSignatureSpan">got.</span>patch
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">patch</span>(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.post" id="apidoc.element.got.post">
+        function <span class="apidocSignatureSpan">got.</span>post
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		//=&#x3e; &#x27;Internal server error ...&#x27;
+	});
+
+// Streams
+got.stream(&#x27;todomvc.com&#x27;).pipe(fs.createWriteStream(&#x27;index.html&#x27;));
+
+// For POST, PUT and PATCH methods got.stream returns a WritableStream
+fs.createReadStream(&#x27;index.html&#x27;).pipe(got.stream.<span class="apidocCodeKeywordSpan">post</span>(&#x27;todomvc.com&#x27
+;));
+```
+
+
+### API
+
+It&#x27;s a `GET` request by default, but can be changed in `options`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.put" id="apidoc.element.got.put">
+        function <span class="apidocSignatureSpan">got.</span>put
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">put</span>(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream" id="apidoc.element.got.stream">
+        function <span class="apidocSignatureSpan">got.</span>stream
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; asStream(normalizeArguments(url, opts))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+helpers.forEach(el =&#x3e; {
+	got[el] = (url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}));
+});
+
+got.stream = (url, opts) =&#x3e; asStream(normalizeArguments(url, opts));
+
+for (const el of helpers) {
+	got.stream[el] = (url, opts) =&#x3e; got.<span class="apidocCodeKeywordSpan">stream</span>(url, Object.assign({}, opts, {method
+: el}));
+}
+
+function stdError(error, opts) {
+	if (error.code !== undefined) {
+		this.code = error.code;
+	}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.HTTPError" id="apidoc.module.got.HTTPError">module got.HTTPError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError.HTTPError" id="apidoc.element.got.HTTPError.HTTPError">
+        function <span class="apidocSignatureSpan">got.</span>HTTPError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HTTPError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+							res.body = JSON.parse(res.body);
+						} catch (e) {
+							throw new got.ParseError(e, statusCode, opts, data);
+						}
+					}
+
+					if (statusCode &#x3c; 200 || statusCode &#x3e; limitStatusCode) {
+						throw new got.<span class="apidocCodeKeywordSpan">HTTPError</span>(statusCode, opts);
+					}
+
+					resolve(res);
+				})
+				.catch(err =&#x3e; {
+					Object.defineProperty(err, &#x27;response&#x27;, {value: res});
+					reject(err);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError.super_" id="apidoc.element.got.HTTPError.super_">
+        function <span class="apidocSignatureSpan">got.HTTPError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.HTTPError.super_" id="apidoc.module.got.HTTPError.super_">module got.HTTPError.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError.super_.super_" id="apidoc.element.got.HTTPError.super_.super_">
+        function <span class="apidocSignatureSpan">got.HTTPError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.HTTPError.super_.captureStackTrace" id="apidoc.element.got.HTTPError.super_.captureStackTrace">
+        function <span class="apidocSignatureSpan">got.HTTPError.super_.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.MaxRedirectsError" id="apidoc.module.got.MaxRedirectsError">module got.MaxRedirectsError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.MaxRedirectsError.MaxRedirectsError" id="apidoc.element.got.MaxRedirectsError.MaxRedirectsError">
+        function <span class="apidocSignatureSpan">got.</span>MaxRedirectsError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MaxRedirectsError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		const req = fn.request(opts, res =&#x3e; {
+			const statusCode = res.statusCode;
+
+			if (isRedirect(statusCode) &#x26;&#x26; opts.followRedirect &#x26;&#x26; &#x27;location&#x27; in res.headers &#x26;&#x26; (opts
+.method === &#x27;GET&#x27; || opts.method === &#x27;HEAD&#x27;)) {
+				res.resume();
+
+				if (++redirectCount &#x3e; 10) {
+					ee.emit(&#x27;error&#x27;, new got.<span class="apidocCodeKeywordSpan">MaxRedirectsError</span>(statusCode, opts), null, res
+);
+					return;
+				}
+
+				const bufferString = Buffer.from(res.headers.location, &#x27;binary&#x27;).toString();
+
+				redirectUrl = urlLib.resolve(urlLib.format(opts), bufferString);
+				const redirectOpts = Object.assign({}, opts, urlLib.parse(redirectUrl));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.MaxRedirectsError.super_" id="apidoc.element.got.MaxRedirectsError.super_">
+        function <span class="apidocSignatureSpan">got.MaxRedirectsError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.ParseError" id="apidoc.module.got.ParseError">module got.ParseError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.ParseError.ParseError" id="apidoc.element.got.ParseError.ParseError">
+        function <span class="apidocSignatureSpan">got.</span>ParseError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ParseError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+					res.body = data;
+
+					if (opts.json &#x26;&#x26; res.body) {
+						try {
+							res.body = JSON.parse(res.body);
+						} catch (e) {
+							throw new got.<span class="apidocCodeKeywordSpan">ParseError</span>(e, statusCode, opts, data);
+						}
+					}
+
+					if (statusCode &#x3c; 200 || statusCode &#x3e; limitStatusCode) {
+						throw new got.HTTPError(statusCode, opts);
+					}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.ParseError.super_" id="apidoc.element.got.ParseError.super_">
+        function <span class="apidocSignatureSpan">got.ParseError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.ReadError" id="apidoc.module.got.ReadError">module got.ReadError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.ReadError.ReadError" id="apidoc.element.got.ReadError.ReadError">
+        function <span class="apidocSignatureSpan">got.</span>ReadError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ReadError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			req.end(opts.body);
+		});
+
+		ee.on(&#x27;response&#x27;, res =&#x3e; {
+			const stream = opts.encoding === null ? getStream.buffer(res) : getStream(res, opts);
+
+			stream
+				.catch(err =&#x3e; reject(new got.<span class="apidocCodeKeywordSpan">ReadError</span>(err, opts)))
+				.then(data =&#x3e; {
+					const statusCode = res.statusCode;
+					const limitStatusCode = opts.followRedirect ? 299 : 399;
+
+					res.body = data;
+
+					if (opts.json &#x26;&#x26; res.body) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.ReadError.super_" id="apidoc.element.got.ReadError.super_">
+        function <span class="apidocSignatureSpan">got.ReadError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.RequestError" id="apidoc.module.got.RequestError">module got.RequestError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.RequestError.RequestError" id="apidoc.element.got.RequestError.RequestError">
+        function <span class="apidocSignatureSpan">got.</span>RequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RequestError = function () {
+		Object.defineProperty(this, &#x27;name&#x27;, {
+			configurable: true,
+			value: className,
+			writable: true
+		});
+
+		captureStackTrace(this, this.constructor);
+
+		setup.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			const backoff = opts.retries(++retryCount, err);
+
+			if (backoff) {
+				setTimeout(get, backoff, opts);
+				return;
+			}
+
+			ee.emit(&#x27;error&#x27;, new got.<span class="apidocCodeKeywordSpan">RequestError</span>(err, opts));
+		});
+
+		if (opts.gotTimeout) {
+			timedOut(req, opts.gotTimeout);
+		}
+
+		setImmediate(() =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.RequestError.super_" id="apidoc.element.got.RequestError.super_">
+        function <span class="apidocSignatureSpan">got.RequestError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.got.stream" id="apidoc.module.got.stream">module got.stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.stream" id="apidoc.element.got.stream.stream">
+        function <span class="apidocSignatureSpan">got.</span>stream
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; asStream(normalizeArguments(url, opts))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+helpers.forEach(el =&#x3e; {
+	got[el] = (url, opts) =&#x3e; got(url, Object.assign({}, opts, {method: el}));
+});
+
+got.stream = (url, opts) =&#x3e; asStream(normalizeArguments(url, opts));
+
+for (const el of helpers) {
+	got.stream[el] = (url, opts) =&#x3e; got.<span class="apidocCodeKeywordSpan">stream</span>(url, Object.assign({}, opts, {method
+: el}));
+}
+
+function stdError(error, opts) {
+	if (error.code !== undefined) {
+		this.code = error.code;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.delete" id="apidoc.element.got.stream.delete">
+        function <span class="apidocSignatureSpan">got.stream.</span>delete
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">delete</span>(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+
+Each error contains (if available) `statusCode`, `statusMessage`, `host`, `hostname`, `method` and `path` properties to make debugging
+ easier.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.get" id="apidoc.element.got.stream.get">
+        function <span class="apidocSignatureSpan">got.stream.</span>get
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`redirect` event to get the response object of a redirect. The second argument is options for the next request to the redirect location
+.
+
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.<span class="apidocCodeKeywordSpan">get</span>(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.head" id="apidoc.element.got.stream.head">
+        function <span class="apidocSignatureSpan">got.stream.</span>head
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.patch(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">head</span>(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.patch" id="apidoc.element.got.stream.patch">
+        function <span class="apidocSignatureSpan">got.stream.</span>patch
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.put(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">patch</span>(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+
+
+## Errors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.post" id="apidoc.element.got.stream.post">
+        function <span class="apidocSignatureSpan">got.stream.</span>post
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		//=&#x3e; &#x27;Internal server error ...&#x27;
+	});
+
+// Streams
+got.stream(&#x27;todomvc.com&#x27;).pipe(fs.createWriteStream(&#x27;index.html&#x27;));
+
+// For POST, PUT and PATCH methods got.stream returns a WritableStream
+fs.createReadStream(&#x27;index.html&#x27;).pipe(got.stream.<span class="apidocCodeKeywordSpan">post</span>(&#x27;todomvc.com&#x27
+;));
+```
+
+
+### API
+
+It&#x27;s a `GET` request by default, but can be changed in `options`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.got.stream.put" id="apidoc.element.got.stream.put">
+        function <span class="apidocSignatureSpan">got.stream.</span>put
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(url, opts) =&#x3e; got.stream(url, Object.assign({}, opts, {method: el}))</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### .on(&#x27;error&#x27;, error, body, response)
+
+`error` event emitted in case of protocol error (like `ENOTFOUND` etc.) or status error (4xx or 5xx). The second argument is the
+ body of the server response in case of status error. The third argument is response object.
+
+#### got.get(url, [options])
+#### got.post(url, [options])
+#### got.<span class="apidocCodeKeywordSpan">put</span>(url, [options])
+#### got.patch(url, [options])
+#### got.head(url, [options])
+#### got.delete(url, [options])
+
+Sets `options.method` to the method name and makes a request.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
