@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.got.got">
+            function <span class="apidocSignatureSpan"></span>got
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.got.HTTPError">
             function <span class="apidocSignatureSpan">got.</span>HTTPError
             <span class="apidocSignatureSpan">()</span>
@@ -382,6 +391,25 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.got" id="apidoc.module.got">module got</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.got.got" id="apidoc.element.got.got">
+        function <span class="apidocSignatureSpan"></span>got
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function got(url, opts) {
+	try {
+		return asPromise(normalizeArguments(url, opts));
+	} catch (err) {
+		return Promise.reject(err);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
