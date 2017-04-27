@@ -1,6 +1,6 @@
 # npmdoc-got
 
-#### api documentation for  [got (v6.7.1)](https://github.com/sindresorhus/got#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-got.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-got) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-got.svg)](https://travis-ci.org/npmdoc/node-npmdoc-got)
+#### basic api documentation for  [got (v6.7.1)](https://github.com/sindresorhus/got#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-got.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-got) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-got.svg)](https://travis-ci.org/npmdoc/node-npmdoc-got)
 
 #### Simplified HTTP requests
 
@@ -109,7 +109,8 @@
     "version": "6.7.1",
     "xo": {
         "esnext": true
-    }
+    },
+    "bin": {}
 }
 ```
 
